@@ -19,9 +19,47 @@
     </header>
 
     <div class="app">
-        <main>
+        <main class='notes'>
+            <form class="notes_form">
+
+                <label for="today" class="notes day">
+
+                    <span class="heading">Today</span>
+
+                    <textarea class='notes_input' data-element="notes" data-id="day" id="today"
+                        spellcheck="false"></textarea>
+
+                </label>
+                <label for="this week" class="notes week">
+
+                    <span class="heading">This Week</span>
+
+                    <textarea class='notes_input' data-element="notes" data-id="week" id="this week"
+                        spellcheck="false"></textarea>
+
+                </label>
+
+                <label for="this month" class="notes month">
+
+                    <span class="heading">This Month</span>
+
+                    <textarea class='notes_input' data-element="notes" data-id="month" id="this month"
+                        spellcheck="false"></textarea>
+
+                </label>
+
+                <label for="reminder" class="notes reminder">
+
+                    <span class="heading">Reminders</span>
+
+                    <textarea class='notes_input' data-element="notes" data-id="reminder" id="reminder"
+                        spellcheck="false"></textarea>
+
+                </label>
+            </form>
 
         </main>
+
         <section>
             <p>
                 Comharraich is a very simple todo note pad for saving daily and monthly notes to your browser,
