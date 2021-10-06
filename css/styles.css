@@ -238,20 +238,24 @@ label {
    */
 
    .notes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 66% auto;
-    grid-gap: .5rem;
-    flex-basis: 100%;
-    padding: var(--metric-gutter);
+    display: flex;
   }
 
   .notes_form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--metric-gutter);
-    flex: auto;
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-column-gap: 0px;
+    grid-gap: .5rem;
+    flex-basis: 100%;
+    padding: var(--metric-gutter);
+   
   }
+
+  .notes_day { grid-area: 1 / 1 / 3 / 2; } 
+  .notes_week { grid-area: 1 / 2 / 3 / 3; } 
+  .notes_month { grid-area: 1 / 3 / 2 / 5; } 
+  .notes_reminder { grid-area: 2 / 3 / 3 / 5; } 
 
   textarea {
     flex-grow: 1;
