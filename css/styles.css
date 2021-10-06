@@ -105,6 +105,7 @@ select {
     --metric-mini-gutter-neg: -0.8rem;
     --color-dark: #1E4147;
     --color-light: #FAE3B4;
+    --color-focus: rgba(34, 144, 255, .5);
     --color-text: var(--color-dark);
     --color-bg: var(--color-light);
     --color-text-rev: var(--color-light);
@@ -116,6 +117,7 @@ select {
       --color-mode: 'dark';
       --color-text: var(--color-light);
       --color-bg: var(--color-dark);
+      --color-focus: rgba(34, 144, 255, .5);
       --color-text-rev: var(--color-dark);
       --color-bg-rev: var(--color-light);
     }
@@ -126,7 +128,7 @@ select {
     background: var(--color-bg);
     display: flex;
     flex-direction: column;
-    font-family: 'Yaldevi', sans-serif;;
+    font-family: 'Cormorant Garamond', sans-serif;;
   }
 
   button:active {
@@ -158,6 +160,7 @@ label {
   font-size: 1rem;
   font-weight: 400;
 }
+
 .site-head {
     padding: var(--metric-mini-gutter) var(--metric-gutter);
     border-bottom: 1px solid;
@@ -244,22 +247,44 @@ label {
   .notes_form {
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
+    grid-template-rows: repeat(4, 1fr); 
     grid-column-gap: 0px;
-    grid-gap: .5rem;
+    grid-gap: .25rem;
     flex-basis: 100%;
     padding: var(--metric-gutter);
    
   }
 
-  .notes_day { grid-area: 1 / 1 / 3 / 2; } 
-  .notes_week { grid-area: 1 / 2 / 3 / 3; } 
-  .notes_month { grid-area: 1 / 3 / 2 / 5; } 
-  .notes_reminder { grid-area: 2 / 3 / 3 / 5; } 
+  .notes_day { grid-area: 1 / 1 / 5 / 2; } 
+  .notes_week { grid-area: 1 / 2 / 5 / 3 } 
+  .notes_month { grid-area: 1 / 3 / 3 / 5; } 
+  .notes_reminder { grid-area: 3 / 3 / 5 / 5; } 
+
+  .notes_input {
+    display: block;
+    width: 100%;
+    flex: auto;
+    /* min-height: 38rem; */
+    border: 1px solid var(--color-bg-rev);
+    background: transparent;
+    font-family: 'Yalvedi';
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: currentColor;
+    padding: var(--metric-gutter, 1rem);
+    resize: none;
+}
+   
+
+
+  }
+
+ 
 
   textarea {
+    
     flex-grow: 1;
-    border: 0;
+    border: 1px solid var(--color-bg-rev);
     resize: none;
     background: none;
     font: inherit;
@@ -274,12 +299,16 @@ textarea:focus {
 
 .heading {
     padding-bottom: .5rem;
-    border-bottom: 1px solid var(--color-bg-rev);
-    font-weight: 400;
+    /* border-bottom: 1px solid var(--color-bg-rev); */
+    /* font-weight: 400; */
     padding: .5rem;
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
     /* font-size: 0.75rem; */
     letter-spacing: .075em;
+}
+
+.notes_input:focus {
+  box-shadow: var(--color-focus) 0 0 2px 2px;
 }
