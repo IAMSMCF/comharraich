@@ -1,0 +1,1 @@
+** Added for future reference and as a todo list for improvements / tweaks while keeping the application lean **
