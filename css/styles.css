@@ -82,3 +82,126 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* Utils */
+/* https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/ */
+
+.flow {
+    --flow-space: 1em;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space);
+  }
+
+/* 
+* GLOBAL
+ */
+
+ :root {
+    --metric-gutter: 1.5rem;
+    --metric-mini-gutter: 0.8rem;
+    --metric-gutter-neg: -1.5rem;
+    --metric-mini-gutter-neg: -0.8rem;
+    --color-dark: #1E4147;
+    --color-light: #FAE3B4;
+    --color-text: var(--color-dark);
+    --color-bg: var(--color-light);
+    --color-text-rev: var(--color-light);
+    --color-bg-rev: var(--color-dark);
+
+ }
+ @media (prefers-color-scheme: dark) {
+    :root:not([data-user-color-scheme]) {
+      --color-mode: 'dark';
+      --color-text: var(--color-light);
+      --color-bg: var(--color-dark);
+      --color-text-rev: var(--color-dark);
+      --color-bg-rev: var(--color-light);
+    }
+  }
+
+  body {
+    color: var(--color-text);
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Yaldevi', sans-serif;;
+  }
+
+  button:active {
+    transform: scale(0.99);
+  }
+
+  h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+li + li {
+  margin-top: 0.5rem;
+}
+
+sup {
+  font-weight: 400;
+  line-height: 0.75;
+  font-size: 0.6em;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.site-head {
+    padding: var(--metric-mini-gutter) var(--metric-gutter);
+    border-bottom: 1px solid;
+  }
+  
+  .site-head h1 {
+    margin-bottom: 0.2rem;
+  }
+
+  /**
+ * Info block
+ */
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--metric-gutter);
+    outline: 0.25px solid;
+    transition: opacity 500ms linear;
+    transition-delay: 100ms;
+  }
+  
+  .info p {
+    max-width: 60ch;
+    font-size: 0.75rem;
+  }
+  
+  [data-state='focus'] .info {
+    opacity: 0.5;
+  }
+
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--metric-gutter);
+    /* outline: 0.25px solid; */
+    transition: opacity 500ms linear;
+    transition-delay: 100ms;
+  }
+  .title h1 {
+    max-width: 60ch;
+  }
