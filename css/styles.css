@@ -252,23 +252,28 @@ label {
     grid-gap: .25rem;
     flex-basis: 100%;
     padding: var(--metric-gutter);
-   
+    grid-template-areas: 
+    "notes_day notes_week notes_month notes_month"
+    "notes_day notes_week notes_month notes_month"
+    "notes_day notes_week notes_reminder notes_reminder"
+    "notes_day notes_week notes_reminder notes_reminder"
+    ;
   }
 
-  .notes_day { grid-area: 1 / 1 / 5 / 2; } 
-  .notes_week { grid-area: 1 / 2 / 5 / 3 } 
-  .notes_month { grid-area: 1 / 3 / 3 / 5; } 
-  .notes_reminder { grid-area: 3 / 3 / 5 / 5; } 
+  .notes_day { grid-area: notes_day; } 
+  .notes_week { grid-area: notes_week } 
+  .notes_month { grid-area: notes_month;} 
+  .notes_reminder { grid-area: notes_reminder } 
 
   .notes_input {
     display: block;
     width: 100%;
     flex: auto;
-    /* min-height: 38rem; */
+    max-height: 75vh;
     border: 1px solid var(--color-bg-rev);
     background: transparent;
     font-family: 'Yalvedi';
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: currentColor;
     padding: var(--metric-gutter, 1rem);
@@ -277,38 +282,7 @@ label {
    
 
 
-  }
+  
 
  
 
-  textarea {
-    
-    flex-grow: 1;
-    border: 1px solid var(--color-bg-rev);
-    resize: none;
-    background: none;
-    font: inherit;
-    padding: .5rem;
-    line-height: 1.5em;
-    color: var(--color-light);
-}
-
-textarea:focus {
-    outline: 0;
-}
-
-.heading {
-    padding-bottom: .5rem;
-    /* border-bottom: 1px solid var(--color-bg-rev); */
-    /* font-weight: 400; */
-    padding: .5rem;
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    /* font-size: 0.75rem; */
-    letter-spacing: .075em;
-}
-
-.notes_input:focus {
-  box-shadow: var(--color-focus) 0 0 2px 2px;
-}
